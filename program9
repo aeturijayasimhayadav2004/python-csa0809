@@ -1,0 +1,17 @@
+def main():
+    # Input the number of elements
+    N = int(input("Enter the number of elements: "))
+
+    # Initialize sum to zero
+    total_sum = 0
+
+    # Iterate N times to get each number and add to sum
+    for i in range(N):
+        num = float(input(f"Enter number {i+1}: "))
+        total_sum += num
+
+    # Print the sum
+    print(f"Sum of {N} numbers is: {total_sum}")
+
+if __name__ == "__main__":
+    main()
