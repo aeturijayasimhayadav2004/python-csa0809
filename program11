@@ -1,0 +1,18 @@
+# Concatenate two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+concatenated_tuple = tuple1 + tuple2
+print("Concatenated tuple:", concatenated_tuple)
+
+# Find the index of a specified element
+element_to_find = 5
+try:
+    index = concatenated_tuple.index(element_to_find)
+    print(f"Index of {element_to_find}:", index)
+except ValueError:
+    print(f"{element_to_find} not found in tuple.")
+
+# Count occurrences of a specified element
+element_to_count = 3
+count = concatenated_tuple.count(element_to_count)
+print(f"Occurrences of {element_to_count}:", count)
