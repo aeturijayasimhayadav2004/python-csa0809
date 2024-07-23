@@ -1,0 +1,14 @@
+def merge_and_sort(list1, list2):
+    # Merge the two lists
+    merged_list = list1 + list2
+    
+    # Sort the merged list
+    merged_list.sort()
+    
+    return merged_list
+
+# Example usage:
+list1 = [3, 8, 1, 10]
+list2 = [4, 7, 2, 9]
+merged_sorted_list = merge_and_sort(list1, list2)
+print("Merged and sorted list:", merged_sorted_list)
