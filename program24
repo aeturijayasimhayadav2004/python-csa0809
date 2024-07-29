@@ -1,0 +1,12 @@
+def longestUncommonSubsequence(a, b):
+    # If strings are identical, return -1
+    if a == b:
+        return -1
+    
+    # Return the length of the longer string if they are different
+    return max(len(a), len(b))
+
+# Test cases
+print(longestUncommonSubsequence("aba", "cdc"))  # Output: 3
+print(longestUncommonSubsequence("aaa", "bbb"))  # Output: 3
+print(longestUncommonSubsequence("aaa", "aaa"))  # Output: -1
