@@ -1,0 +1,23 @@
+def shoppingOffers(price, special, needs):
+    # Memoization dictionary
+    memo = {}
+    
+    def dfs(current_needs):
+        # Check if the current needs state is already computed
+        if tuple(current_needs) in memo:
+            return memo[tuple(current_needs)]
+        
+        # Calculate the cost without any special offers
+        total_cost = sum(current_needs[i] * price[i] for i in range(len(needs)))
+        
+        # Try each special offer to see if it provides a lower cost
+        for offer in special:
+            new_needs = []
+            for i in range(len(needs)):
+                if current_needs[i] < offer[i]:  # Can't use this offer if it exceeds current needs
+                    break
+                new_needs.append(current_needs[i] - offer[i])
+            else:  # Only executed if the loop didn't break, meaning the offer is valid
+                total_cost = min(total_cost, offer[-1] + dfs(new_needs))
+        
+        memo[
