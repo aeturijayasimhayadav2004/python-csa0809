@@ -1,0 +1,32 @@
+def addBinary(a, b):
+    max_len = max(len(a), len(b))
+    
+    # Padding the shorter string with zeros
+    a = a.zfill(max_len)
+    b = b.zfill(max_len)
+    
+    result = []
+    carry = 0
+
+    # Iterate through the strings from the end to the beginning
+    for i in range(max_len - 1, -1, -1):
+        bit_a = int(a[i])
+        bit_b = int(b[i])
+        
+        # Compute the sum of the bits and the carry
+        total = bit_a + bit_b + carry
+        carry = total // 2
+        result.append(str(total % 2))
+    
+    # If there's a carry left, add it to the result
+    if carry != 0:
+        result.append(str(carry))
+    
+    # The result is currently in reverse order
+    result.reverse()
+    
+    return ''.join(result)
+
+# Test cases
+print(addBinary("11", "1"))    # Output: "100"
+print(addBinary("1010", "1011"))  # Output: "10101"
