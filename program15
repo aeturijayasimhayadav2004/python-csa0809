@@ -1,0 +1,25 @@
+def climbStairs(n):
+    # If there's only 1 step, there's only 1 way to reach the top
+    if n == 1:
+        return 1
+    # If there are 2 steps, there are 2 ways: (1+1) or (2)
+    elif n == 2:
+        return 2
+
+    # Create a list to store the number of ways to reach each step
+    dp = [0] * (n + 1)
+    # Base cases
+    dp[1] = 1
+    dp[2] = 2
+
+    # Fill the dp list from step 3 to n
+    for i in range(3, n + 1):
+        # The number of ways to reach step i is the sum of the ways to reach step i-1 and i-2
+        dp[i] = dp[i - 1] + dp[i - 2]
+
+    # The answer is the number of ways to reach step n
+    return dp[n]
+
+# Test cases
+print(climbStairs(3))  # Output: 3
+print(climbStairs(5))  # Output: 8
