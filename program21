@@ -1,0 +1,15 @@
+def largestSingleNumber(nums):
+    from collections import Counter
+
+    # Count the occurrences of each number
+    count = Counter(nums)
+
+    # Filter out numbers that appear exactly once
+    single_numbers = [num for num, cnt in count.items() if cnt == 1]
+
+    # Return the largest single number, or 'null' if there are no single numbers
+    return max(single_numbers) if single_numbers else 'null'
+
+# Test cases
+print(largestSingleNumber([8, 8, 2, 2, 4, 4, 5, 5, 1, 7, 6]))  # Output: 7
+print(largestSingleNumber([8, 8, 5, 5, 9, 9, 6, 6, 6, 3, 3, 3]))  # Output: 'null'
