@@ -1,0 +1,15 @@
+def maxCandies(candyType):
+    # Number of candies Alice can eat
+    n = len(candyType)
+    max_types = n // 2
+    
+    # Count the number of distinct candy types
+    unique_types = len(set(candyType))
+    
+    # The result is the minimum of the number of distinct types and the number Alice can eat
+    return min(max_types, unique_types)
+
+# Test cases
+print(maxCandies([1, 1, 2, 2, 3, 3]))  # Output: 3
+print(maxCandies([1, 1, 2, 3]))         # Output: 2
+print(maxCandies([6, 6, 6, 6]))         # Output: 1
