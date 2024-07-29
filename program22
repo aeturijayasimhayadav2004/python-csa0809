@@ -1,0 +1,24 @@
+def findErrorNums(nums):
+    n = len(nums)
+    
+    # Expected sum and sum of squares
+    sum_n = n * (n + 1) // 2
+    sum_n_sq = n * (n + 1) * (2 * n + 1) // 6
+    
+    # Actual sum and sum of squares
+    sum_actual = sum(nums)
+    sum_actual_sq = sum(x * x for x in nums)
+    
+    # Calculate differences
+    diff_sum = sum_n - sum_actual  # missing - duplicate
+    diff_sq = sum_n_sq - sum_actual_sq  # missing^2 - duplicate^2
+    
+    # Solve the equations
+    missing = (diff_sum + diff_sq // diff_sum) // 2
+    duplicate = missing - diff_sum
+    
+    return [duplicate, missing]
+
+# Test cases
+print(findErrorNums([1, 2, 2, 4]))  # Output: [2, 3]
+print(findErrorNums([1, 1]))        # Output: [1, 2]
