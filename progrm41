@@ -1,0 +1,26 @@
+def binary_to_decimal(binary_str):
+    # Convert binary string to decimal integer
+    return int(binary_str, 2)
+
+def decimal_to_octal(decimal_num):
+    # Convert decimal integer to octal string
+    return oct(decimal_num)[2:]  # Remove the '0o' prefix
+
+def main():
+    # Sample Input
+    binary_str = input("Given Number: ")
+    
+    # Convert binary to decimal
+    decimal_num = binary_to_decimal(binary_str)
+    
+    # Convert decimal to octal
+    octal_num = decimal_to_octal(decimal_num)
+    
+    # Print the results
+    print(f"Decimal Number: {decimal_num}")
+    print(f"Octal: {octal_num}")
+
+# Run the main function
+main()
+
+  
