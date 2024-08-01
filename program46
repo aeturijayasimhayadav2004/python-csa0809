@@ -1,0 +1,45 @@
+def calculate_row_sums(matrix):
+    # Calculate the sum of each row
+    return [sum(row) for row in matrix]
+
+def calculate_column_sums(matrix):
+    # Calculate the sum of each column
+    num_columns = len(matrix[0])
+    return [sum(matrix[row][col] for row in range(len(matrix))) for col in range(num_columns)]
+
+def calculate_diagonal_sums(matrix):
+    # Calculate the sum of primary and secondary diagonals
+    primary_diagonal_sum = sum(matrix[i][i] for i in range(len(matrix)))
+    secondary_diagonal_sum = sum(matrix[i][len(matrix) - 1 - i] for i in range(len(matrix)))
+    return primary_diagonal_sum, secondary_diagonal_sum
+
+def print_matrix_sums(matrix):
+    row_sums = calculate_row_sums(matrix)
+    column_sums = calculate_column_sums(matrix)
+    primary_diagonal_sum, secondary_diagonal_sum = calculate_diagonal_sums(matrix)
+    
+    # Print row sums
+    for i, row_sum in enumerate(row_sums, start=1):
+        print(f"Sum of {i} row: {row_sum}")
+    
+    # Print column sums
+    for i, col_sum in enumerate(column_sums, start=1):
+        print(f"Sum of {i} column: {col_sum}")
+    
+    # Print diagonal sums
+    print(f"Primary diagonal sum: {primary_diagonal_sum}")
+    print(f"Secondary diagonal sum: {secondary_diagonal_sum}")
+
+def main():
+    # Given matrix
+    matrix = [
+        [1, 2, 3],  
+        [4, 5, 6],  
+        [7, 8, 9]
+    ]
+    
+    # Print sums
+    print_matrix_sums(matrix)
+
+# Run the main function
+main()
