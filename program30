@@ -1,0 +1,24 @@
+def sum_of_digits_to_single_digit(number):
+    while number >= 10:
+        number = sum(int(digit) for digit in str(number))
+    return number
+
+def main():
+    # Sample Input
+    n = int(input("Enter N value: "))
+    num = int(input(f"Enter {n} digit number: "))
+    
+    # Ensure the number has exactly N digits
+    if len(str(num)) != n:
+        print(f"Error: The number must be exactly {n} digits long.")
+        return
+    
+    # Calculate the sum of digits until a single digit is obtained
+    result = sum_of_digits_to_single_digit(num)
+    
+    print(f"Sum of {n} digit number: {result}")
+
+# Run the main function
+main()
+
+  
