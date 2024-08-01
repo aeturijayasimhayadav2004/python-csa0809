@@ -1,0 +1,18 @@
+def fact_iterative(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+def main():
+    # Sample Input
+    N = int(input("Enter N: "))
+    
+    # Calculate factorial using iterative approach
+    result = fact_iterative(N)
+    
+    # Print the result
+    print(f"Factorial of {N} is: {result}")
+
+# Run the main function
+main()
