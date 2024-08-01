@@ -1,0 +1,20 @@
+def generate_pythagorean_triplets(limit):
+    triplets = []
+    for a in range(1, limit + 1):
+        for b in range(a, limit + 1):  # Ensure b >= a to avoid duplicate triplets
+            for c in range(b, limit + 1):  # Ensure c >= b to avoid duplicate triplets
+                if a * a + b * b == c * c:
+                    triplets.append((a, b, c))
+    
+    return triplets
+
+def print_triplets(triplets):
+    for triplet in triplets:
+        print(f"{triplet[0]} {triplet[1]} {triplet[2]}")
+
+# Sample Input
+limit = 10
+
+# Generate and print Pythagorean triplets within the given limit
+triplets = generate_pythagorean_triplets(limit)
+print_triplets(triplets)
