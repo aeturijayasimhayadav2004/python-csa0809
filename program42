@@ -1,0 +1,24 @@
+def add_binary(a, b):
+    # Convert binary strings to decimal integers
+    num1 = int(a, 2)
+    num2 = int(b, 2)
+    
+    # Add the two decimal numbers
+    sum_decimal = num1 + num2
+    
+    # Convert the sum back to a binary string
+    return bin(sum_decimal)[2:]  # Remove the '0b' prefix
+
+def main():
+    # Sample Input
+    a = input("a = ")
+    b = input("b = ")
+    
+    # Compute the sum of the binary numbers
+    result = add_binary(a, b)
+    
+    # Print the result
+    print(f"Output: {result}")
+
+# Run the main function
+main()
