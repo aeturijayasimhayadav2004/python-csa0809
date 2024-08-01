@@ -1,0 +1,25 @@
+from itertools import permutations
+
+def print_unique_permutations(num):
+    # Convert number to string and extract digits
+    num_str = str(num)
+    
+    # Generate all unique permutations of the digits
+    perm_set = set(int(''.join(p)) for p in permutations(num_str))
+    
+    # Sort the permutations
+    sorted_permutations = sorted(perm_set)
+    
+    # Print the permutations
+    print("Permutations are:")
+    for perm in sorted_permutations:
+        print(perm)
+
+def main():
+    # Sample Input
+    num = int(input("Given Number: "))
+    
+    print_unique_permutations(num)
+
+# Run the main function
+main()
