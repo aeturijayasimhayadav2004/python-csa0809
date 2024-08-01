@@ -1,0 +1,20 @@
+import math
+
+def sum_of_factorials(n):
+    total_sum = 0
+    for i in range(1, n + 1):
+        total_sum += math.factorial(i)
+    return total_sum
+
+def main():
+    # Sample Input
+    N = int(input("Enter N: "))
+    
+    # Calculate the sum of factorials
+    result = sum_of_factorials(N)
+    
+    # Print the result
+    print(f"Sum = {result}")
+
+# Run the main function
+main()
