@@ -1,0 +1,32 @@
+def count_less_equal(matrix, M, N, x):
+    # Count numbers <= x in the MxN multiplication table
+    count = 0
+    for i in range(1, M + 1):
+        count += min(x // i, N)
+    return count
+
+def find_kth_smallest(M, N, K):
+    # Binary search for the Kth smallest element
+    left, right = 1, M * N
+    while left < right:
+        mid = (left + right) // 2
+        if count_less_equal(None, M, N, mid) < K:
+            left = mid + 1
+        else:
+            right = mid
+    return left
+
+def main():
+    # Sample Input
+    M = int(input("Enter M: "))
+    N = int(input("Enter N: "))
+    K = int(input("Enter K: "))
+    
+    # Find the Kth smallest element
+    result = find_kth_smallest(M, N, K)
+    
+    # Print the result
+    print(f"The {K}th smallest element is: {result}")
+
+# Run the main function
+main()
