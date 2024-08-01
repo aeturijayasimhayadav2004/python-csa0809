@@ -1,0 +1,40 @@
+import math
+from functools import reduce
+
+def gcd(a, b):
+    # Calculate the GCD of two numbers using Euclidean algorithm
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    # Calculate the LCM of two numbers
+    return abs(a * b) // gcd(a, b)
+
+def find_gcd_of_list(numbers):
+    # Calculate the GCD of a list of numbers
+    return reduce(gcd, numbers)
+
+def find_lcm_of_list(numbers):
+    # Calculate the LCM of a list of numbers
+    return reduce(lcm, numbers)
+
+def main():
+    # Sample Input
+    N = int(input("N value = "))
+    
+    numbers = []
+    for i in range(N):
+        num = int(input(f"Number {i + 1} = "))
+        numbers.append(num)
+    
+    # Find the LCM and GCD of the list of numbers
+    gcd_result = find_gcd_of_list(numbers)
+    lcm_result = find_lcm_of_list(numbers)
+    
+    # Print the results
+    print(f"LCM = {lcm_result}")
+    print(f"GCD = {gcd_result}")
+
+# Run the main function
+main()
