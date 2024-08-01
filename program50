@@ -1,0 +1,25 @@
+def sum_of_n_numbers_formula(n):
+    # Calculate the sum using the mathematical formula
+    return n * (n + 1) // 2
+
+def sum_of_n_numbers_loop(n):
+    # Calculate the sum using a loop
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    return total
+
+def main():
+    # Sample Input
+    N = int(input("Enter N: "))
+    
+    # Calculate the sum using both methods
+    sum_formula = sum_of_n_numbers_formula(N)
+    sum_loop = sum_of_n_numbers_loop(N)
+    
+    # Print the results
+    print(f"Sum using formula: {sum_formula}")
+    print(f"Sum using loop: {sum_loop}")
+
+# Run the main function
+main()
