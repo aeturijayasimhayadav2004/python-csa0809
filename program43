@@ -1,0 +1,30 @@
+def binary_to_decimal(binary_str):
+    # Convert binary string to decimal integer
+    return int(binary_str, 2)
+
+def find_greatest_binary(a, b, c):
+    # Convert binary numbers to decimal
+    num1 = binary_to_decimal(a)
+    num2 = binary_to_decimal(b)
+    num3 = binary_to_decimal(c)
+    
+    # Find the greatest decimal number
+    greatest_num = max(num1, num2, num3)
+    
+    # Convert the greatest decimal number back to binary
+    return bin(greatest_num)[2:]  # Remove the '0b' prefix
+
+def main():
+    # Sample Input
+    a = input("Enter first binary number: ")
+    b = input("Enter second binary number: ")
+    c = input("Enter third binary number: ")
+    
+    # Find the greatest binary number
+    greatest_binary = find_greatest_binary(a, b, c)
+    
+    # Print the result
+    print(f"The greatest binary number is: {greatest_binary}")
+
+# Run the main function
+main()
