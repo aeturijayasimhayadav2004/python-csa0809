@@ -1,0 +1,27 @@
+def is_tech_number(num):
+    num_str = str(num)
+    length = len(num_str)
+    
+    # Check if the number has an even number of digits
+    if length % 2 != 0:
+        return False
+    
+    # Split the number into two halves
+    mid = length // 2
+    first_half = int(num_str[:mid])
+    second_half = int(num_str[mid:])
+    
+    # Check if the sum of the two halves squared equals the original number
+    return (first_half + second_half) ** 2 == num
+
+def main():
+    # Sample Input
+    num = int(input("Enter number: "))
+    
+    if is_tech_number(num):
+        print("Given number is Tech number")
+    else:
+        print("Given number is not Tech number")
+
+# Run the main function
+main()
